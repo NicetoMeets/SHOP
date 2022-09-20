@@ -1,0 +1,20 @@
+.App {
+  text-align: center;
+}
+
+
+.main-bg {
+  height: 300px;
+  background-image: url('./슈.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.main-imgbox {
+  display: flex;
+  
+}
+
+div img {
+  width: 70%;
+}
