@@ -8,8 +8,7 @@ import { useState } from 'react';
 
 function App() {
 
-  let [shoe] = useState({data});
-  let [상품명, 상품명변경] = useState(['스니커즈', '샌들', '축구화']);
+  let [shoes] = useState({data});
 
   return (
     <div className="App">
@@ -26,31 +25,24 @@ function App() {
 
     <div className='main-bg'></div>
       <div className='main-imgbox'>
-        <div>
+        <Card shoes={shoes}></Card>
+        <Card shoes={shoes}></Card>
+        <Card shoes={shoes}></Card>
+      </div>
+    </div>
+  );
+}
+
+function Card(props){
+  return (
+    <div>
           <img src ={shoe1}></img>
           <h4>상품명</h4>
           <p>상품설명</p>
         </div>
-        <div>
-        <img src ={shoe2}></img>
-        <h4>상품명</h4>
-          <p>상품설명</p>
-        </div>
-        <div>
-        <img src ={shoe3}></img>
-        <h4>상품명</h4>
-          <p>상품설명</p>
-        </div>
-      </div>
-    </div>
 
-
-
-
-
-  );
+  )
 }
-
 
 
 export default App;
