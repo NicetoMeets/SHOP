@@ -1,14 +1,14 @@
 import { Navbar , Container , Nav} from 'react-bootstrap';
 import './App.css';
-import shoe1 from './product1.jpg';
-import shoe2 from './product2.jpg';
-import shoe3 from './product3.jpg';
+import shoe0 from './product1.jpg';
+import shoe1 from './product2.jpg';
+import shoe2 from './product3.jpg';
 import data from './data.js';
 import { useState } from 'react';
 
 function App() {
 
-  let [shoes] = useState({data});
+  let [shoes] = useState(data);
 
   return (
     <div className="App">
@@ -25,9 +25,11 @@ function App() {
 
     <div className='main-bg'></div>
       <div className='main-imgbox'>
-        <Card shoes={shoes}></Card>
-        <Card shoes={shoes}></Card>
-        <Card shoes={shoes}></Card>
+        {
+        shoes.map((a,i)=>{ return (
+          <Card shoes={shoes[i]} i={i}></Card>
+        )})
+        }
       </div>
     </div>
   );
@@ -35,10 +37,10 @@ function App() {
 
 function Card(props){
   return (
-    <div>
+        <div>
           <img src ={shoe1}></img>
-          <h4>상품명</h4>
-          <p>상품설명</p>
+          <h4>{props.shoes.title}</h4>
+          <p>{props.shoes.price}</p>
         </div>
 
   )
