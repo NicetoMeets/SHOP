@@ -34,7 +34,7 @@ function App() {
       <div className='main-bg'></div>
       <div className='main-imgbox'>
         { shoes.map((a,i)=>{ 
-          return ( <Card shoes={shoes[i]} i={i}></Card>)
+          return ( <Card shoes={shoes[i]} i={i} key={i}></Card>)
         })}
       </div>
     </div> 
