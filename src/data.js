@@ -1,5 +1,5 @@
 
-let a = [
+let b = [
     {
       id : 0,
       title : "White and Black",
@@ -23,4 +23,4 @@ let a = [
   ];
 
 
-  export default a;
+  export default b;

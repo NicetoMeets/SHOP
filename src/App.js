@@ -7,10 +7,12 @@ import data from './data.js';
 import { useState } from 'react';
 import { Routes, Route, Link, useNavigate, Outlet} from 'react-router-dom'
 import Detail from './routes/Detail';
+import axios from 'axios'
 
 function App() {
 
-  let [shoes] = useState(data);
+  let [shoes, setshoes] = useState(data);
+  
   let navigate = useNavigate();
 
   return (
@@ -37,12 +39,19 @@ function App() {
           return ( <Card shoes={shoes[i]} i={i} key={i}></Card>)
         })}
       </div>
-    </div> 
+      <button onClick={()=>{
+        axios.get('https://codingapple1.github.io/shop/data2.json')
+        .then((결과)=>{
+          console.log(결과.data)
+        })
+        .catch(()=>{
+          console.log('실패함')
+        })
+      }}>더보기</button>
+    </div>
   } />
       <Route path='/detail:id' element={<Detail shoes={shoes}></Detail>}></Route>
-      
     </Routes>
-    
     </div>
   );
 }
@@ -58,6 +67,7 @@ function Card(props){
 
   )
 }
+
 
 
 
